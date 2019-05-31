@@ -1,0 +1,6 @@
+framework module Pods_Favo {
+  umbrella header "Pods-Favo-umbrella.h"
+
+  export *
+  module * { export * }
+}

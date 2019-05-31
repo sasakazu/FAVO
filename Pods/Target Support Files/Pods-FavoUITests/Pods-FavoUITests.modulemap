@@ -1,0 +1,6 @@
+framework module Pods_FavoUITests {
+  umbrella header "Pods-FavoUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
