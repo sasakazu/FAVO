@@ -6,6 +6,10 @@ target 'Favo' do
   use_frameworks!
 
   # Pods for Favo
+  
+  pod 'RealmSwift'
+  
+  
 
   target 'FavoTests' do
     inherit! :search_paths

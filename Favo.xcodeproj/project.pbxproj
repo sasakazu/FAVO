@@ -14,6 +14,7 @@
 		73AFCA07229D4C4A00F1BE73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73AFCA05229D4C4A00F1BE73 /* LaunchScreen.storyboard */; };
 		73AFCA12229D4C4A00F1BE73 /* FavoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AFCA11229D4C4A00F1BE73 /* FavoTests.swift */; };
 		73AFCA1D229D4C4A00F1BE73 /* FavoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AFCA1C229D4C4A00F1BE73 /* FavoUITests.swift */; };
+		73BACFBB22A37AF600B20B41 /* object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BACFBA22A37AF600B20B41 /* object.swift */; };
 		9FF51AE5258E9DDF43405919 /* Pods_FavoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06168850D86ACAC4AF381ADA /* Pods_FavoTests.framework */; };
 		E42D31398812FD33E8325058 /* Pods_FavoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB305ADC5ED9634EF15CE4FA /* Pods_FavoUITests.framework */; };
 		F46C7BF513476FF16D33BFDE /* Pods_Favo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F474B679F171E5E077CCB7 /* Pods_Favo.framework */; };
@@ -52,6 +53,7 @@
 		73AFCA18229D4C4A00F1BE73 /* FavoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FavoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		73AFCA1C229D4C4A00F1BE73 /* FavoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoUITests.swift; sourceTree = "<group>"; };
 		73AFCA1E229D4C4A00F1BE73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73BACFBA22A37AF600B20B41 /* object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = object.swift; sourceTree = "<group>"; };
 		8E32B4F4FCEF4609AD46D080 /* Pods-Favo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Favo.release.xcconfig"; path = "Target Support Files/Pods-Favo/Pods-Favo.release.xcconfig"; sourceTree = "<group>"; };
 		AB1F95425AD8F4930D6ABE27 /* Pods-FavoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FavoUITests.debug.xcconfig"; path = "Target Support Files/Pods-FavoUITests/Pods-FavoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B7F474B679F171E5E077CCB7 /* Pods_Favo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Favo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,7 +111,6 @@
 				AB1F95425AD8F4930D6ABE27 /* Pods-FavoUITests.debug.xcconfig */,
 				6D786393403321906AE0994D /* Pods-FavoUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -138,6 +139,7 @@
 		73AFC9FB229D4C4700F1BE73 /* Favo */ = {
 			isa = PBXGroup;
 			children = (
+				73BACFB922A37AE400B20B41 /* database */,
 				73AFC9FC229D4C4700F1BE73 /* AppDelegate.swift */,
 				73AFC9FE229D4C4700F1BE73 /* ViewController.swift */,
 				73AFCA00229D4C4700F1BE73 /* Main.storyboard */,
@@ -166,6 +168,14 @@
 			path = FavoUITests;
 			sourceTree = "<group>";
 		};
+		73BACFB922A37AE400B20B41 /* database */ = {
+			isa = PBXGroup;
+			children = (
+				73BACFBA22A37AF600B20B41 /* object.swift */,
+			);
+			path = database;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -177,6 +187,7 @@
 				73AFC9F5229D4C4700F1BE73 /* Sources */,
 				73AFC9F6229D4C4700F1BE73 /* Frameworks */,
 				73AFC9F7229D4C4700F1BE73 /* Resources */,
+				68EE263A5D2680F3ADD8F506 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -340,6 +351,30 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		68EE263A5D2680F3ADD8F506 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Favo/Pods-Favo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Favo/Pods-Favo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C0FB75E803DFD908E8FE9A38 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -371,6 +406,7 @@
 			files = (
 				73AFC9FF229D4C4700F1BE73 /* ViewController.swift in Sources */,
 				73AFC9FD229D4C4700F1BE73 /* AppDelegate.swift in Sources */,
+				73BACFBB22A37AF600B20B41 /* object.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
